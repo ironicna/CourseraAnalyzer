@@ -168,7 +168,7 @@ def Similarity(cid1, cid2):
 new_id = list(range(0,courses.shape[0]))
 courses['new_id']=new_id
 
-def predict_score():
+def recommend():
     name = input('Enter a course title: ')
     new_course = courses[courses['course_name'].str.contains(name)].iloc[0].to_frame().T
     print('Selected Course: ',new_course.course_name)
@@ -194,4 +194,4 @@ def predict_score():
         print( courses.iloc[neighbor[0]][1])
     
     print('\n')
-predict_score()
+recommend()
